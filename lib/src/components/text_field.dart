@@ -843,7 +843,7 @@ class _NeuTextFieldState extends State<NeuTextField>
   bool get selectionEnabled => widget.selectionEnabled;
   // End of API for TextSelectionGestureDetectorBuilderDelegate.
 
-  bool get _isEnabled => widget.enabled ?? widget.decoration?.enabled ?? true;
+  bool get _isEnabled => widget.enabled ?? widget.decoration.enabled;
 
   int get _currentLength => _effectiveController!.value.text.characters.length;
 
@@ -853,19 +853,18 @@ class _NeuTextFieldState extends State<NeuTextField>
       _effectiveController!.value.text.characters.length > widget.maxLength!;
 
   bool get _hasError =>
-      widget.decoration?.errorText != null || _hasIntrinsicError;
+      widget.decoration.errorText != null || _hasIntrinsicError;
 
   InputDecoration _getEffectiveDecoration() {
     final MaterialLocalizations localizations =
         MaterialLocalizations.of(context);
     final ThemeData themeData = Theme.of(context);
-    final InputDecoration effectiveDecoration =
-        (widget.decoration ?? const InputDecoration())
-            .applyDefaults(themeData.inputDecorationTheme)
-            .copyWith(
-              enabled: _isEnabled,
-              hintMaxLines: widget.decoration?.hintMaxLines ?? widget.maxLines,
-            );
+    final InputDecoration effectiveDecoration = (widget.decoration)
+        .applyDefaults(themeData.inputDecorationTheme)
+        .copyWith(
+          enabled: _isEnabled,
+          hintMaxLines: widget.decoration.hintMaxLines ?? widget.maxLines,
+        );
 
     // No need to build anything if counter or counterText were given directly.
     if (effectiveDecoration.counter != null ||
@@ -953,8 +952,7 @@ class _NeuTextFieldState extends State<NeuTextField>
   }
 
   bool? get _canRequestFocus {
-    final NavigationMode mode =
-        MediaQuery.of(context)?.navigationMode ?? NavigationMode.traditional;
+    final NavigationMode mode = MediaQuery.of(context).navigationMode;
     switch (mode) {
       case NavigationMode.traditional:
         return _isEnabled;

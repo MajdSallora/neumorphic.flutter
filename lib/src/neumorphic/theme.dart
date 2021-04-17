@@ -137,9 +137,8 @@ class NeuTheme extends StatelessWidget {
 
     final MaterialLocalizations localizations =
         MaterialLocalizations.of(context);
-    final ScriptCategory category =
-        localizations?.scriptCategory ?? ScriptCategory.englishLike;
-    final NeuThemeData theme = inheritedTheme?.theme?.data ?? _kFallbackTheme;
+    final ScriptCategory category = localizations.scriptCategory;
+    final NeuThemeData theme = inheritedTheme?.theme.data ?? _kFallbackTheme;
     return NeuThemeData.localize(
         theme, theme.typography.geometryThemeFor(category));
   }
@@ -339,18 +338,15 @@ class NeuBasedCupertinoTheme extends CupertinoThemeData {
       _cupertinoOverrideTheme.brightness ?? _neuThemeData.brightness;
 
   @override
-  Color get primaryColor =>
-      _cupertinoOverrideTheme.primaryColor ?? _neuThemeData.colorScheme.primary;
+  Color get primaryColor => _cupertinoOverrideTheme.primaryColor;
 
   @override
   Color get primaryContrastingColor =>
-      _cupertinoOverrideTheme.primaryContrastingColor ??
-      _neuThemeData.colorScheme.onPrimary;
+      _cupertinoOverrideTheme.primaryContrastingColor;
 
   @override
   Color get scaffoldBackgroundColor =>
-      _cupertinoOverrideTheme.scaffoldBackgroundColor ??
-      _neuThemeData.scaffoldBackgroundColor;
+      _cupertinoOverrideTheme.scaffoldBackgroundColor;
 
   /// Copies the [ThemeData]'s `cupertinoOverrideTheme`.
   ///

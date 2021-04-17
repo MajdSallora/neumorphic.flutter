@@ -973,7 +973,7 @@ class _RenderNeuSwitch<T> extends RenderBox
     final _ChildAnimationManifest? manifest =
         _childAnimations == null ? null : _childAnimations![child];
     final double opacity =
-        manifest?.separatorTween?.evaluate(state.separatorOpacityController) ??
+        manifest?.separatorTween.evaluate(state.separatorOpacityController) ??
             1;
     manifest?.separatorOpacity = opacity;
     paint.color =

@@ -52,9 +52,7 @@ class NeuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = decoration?.color ??
-        NeuTheme.of(context)!.backgroundColor ??
-        Theme.of(context).backgroundColor;
+    final color = decoration.color ?? NeuTheme.of(context)!.backgroundColor;
     final emboss = curveType == CurveType.emboss;
 
     Color colorValue = color;

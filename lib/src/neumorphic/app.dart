@@ -679,7 +679,7 @@ class _NeuAppState extends State<NeuApp> {
         onUnknownRoute: widget.onUnknownRoute,
         builder: (BuildContext context, Widget? child) {
           // Use a light theme, dark theme, or fallback theme.
-          final ThemeMode mode = widget.themeMode ?? ThemeMode.system;
+          final ThemeMode mode = widget.themeMode;
           NeuThemeData? theme;
           if (widget.darkTheme != null) {
             final ui.Brightness platformBrightness =

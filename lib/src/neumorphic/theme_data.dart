@@ -514,67 +514,7 @@ class NeuThemeData {
     required this.bannerTheme,
     required this.dividerTheme,
     required this.buttonBarTheme,
-  })   : assert(curveType != null),
-        assert(lightSource != null),
-        assert(brightness != null),
-        assert(primaryColor != null),
-        assert(primaryColorBrightness != null),
-        assert(primaryColorLight != null),
-        assert(primaryColorDark != null),
-        assert(accentColor != null),
-        assert(accentColorBrightness != null),
-        assert(canvasColor != null),
-        assert(scaffoldBackgroundColor != null),
-        assert(bottomAppBarColor != null),
-        assert(cardColor != null),
-        assert(dividerColor != null),
-        assert(focusColor != null),
-        assert(hoverColor != null),
-        assert(highlightColor != null),
-        assert(splashColor != null),
-        assert(splashFactory != null),
-        assert(selectedRowColor != null),
-        assert(unselectedWidgetColor != null),
-        assert(disabledColor != null),
-        assert(toggleableActiveColor != null),
-        assert(buttonTheme != null),
-        assert(toggleButtonsTheme != null),
-        assert(secondaryHeaderColor != null),
-        assert(textSelectionColor != null),
-        assert(cursorColor != null),
-        assert(textSelectionHandleColor != null),
-        assert(backgroundColor != null),
-        assert(dialogBackgroundColor != null),
-        assert(indicatorColor != null),
-        assert(hintColor != null),
-        assert(errorColor != null),
-        assert(textTheme != null),
-        assert(primaryTextTheme != null),
-        assert(accentTextTheme != null),
-        assert(inputDecorationTheme != null),
-        assert(iconTheme != null),
-        assert(primaryIconTheme != null),
-        assert(accentIconTheme != null),
-        assert(sliderTheme != null),
-        assert(tabBarTheme != null),
-        assert(tooltipTheme != null),
-        assert(cardTheme != null),
-        assert(chipTheme != null),
-        assert(platform != null),
-        assert(materialTapTargetSize != null),
-        assert(pageTransitionsTheme != null),
-        assert(appBarTheme != null),
-        assert(bottomAppBarTheme != null),
-        assert(colorScheme != null),
-        assert(dialogTheme != null),
-        assert(floatingActionButtonTheme != null),
-        assert(typography != null),
-        assert(snackBarTheme != null),
-        assert(bottomSheetTheme != null),
-        assert(popupMenuTheme != null),
-        assert(bannerTheme != null),
-        assert(dividerTheme != null),
-        assert(buttonBarTheme != null);
+  });
 
   /// Create a [NeuThemeData] based on the colors in the given [colorScheme] and
   /// text styles of the optional [textTheme].
@@ -1414,9 +1354,6 @@ class NeuThemeData {
   ///
   /// {@macro dart.ui.shadow.lerp}
   static NeuThemeData lerpWithThemeData(NeuThemeData a, ThemeData b, double t) {
-    assert(a != null);
-    assert(b != null);
-    assert(t != null);
     // Warning: make sure these properties are in the exact same order as in
     // hashValues() and in the raw constructor and in the order of fields in
     // the class and in the lerp() method.
