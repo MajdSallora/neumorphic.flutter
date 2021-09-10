@@ -356,7 +356,7 @@ class NeuThemeData {
     chipTheme ??= ChipThemeData.fromDefaults(
       secondaryColor: primaryColor!,
       brightness: brightness,
-      labelStyle: textTheme.body2!,
+      labelStyle: textTheme.bodyText2!,
     );
     dialogTheme ??= const DialogTheme();
     floatingActionButtonTheme ??= const FloatingActionButtonThemeData();
