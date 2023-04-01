@@ -1394,10 +1394,10 @@ class NeuThemeData {
       secondaryHeaderColor:
           Color.lerp(a.secondaryHeaderColor, b.secondaryHeaderColor, t)!,
       textSelectionColor:
-          Color.lerp(a.textSelectionColor, b.textSelectionColor, t)!,
-      cursorColor: Color.lerp(a.cursorColor, b.cursorColor, t)!,
+          Color.lerp(a.textSelectionColor, b.textSelectionTheme.selectionColor, t)!,
+      cursorColor: Color.lerp(a.cursorColor, b.textSelectionTheme.cursorColor, t)!,
       textSelectionHandleColor: Color.lerp(
-          a.textSelectionHandleColor, b.textSelectionHandleColor, t)!,
+          a.textSelectionHandleColor, b.textSelectionTheme.selectionHandleColor, t)!,
       backgroundColor: Color.lerp(a.backgroundColor, b.backgroundColor, t)!,
       dialogBackgroundColor:
           Color.lerp(a.dialogBackgroundColor, b.dialogBackgroundColor, t)!,

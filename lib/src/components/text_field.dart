@@ -1112,7 +1112,7 @@ class _NeuTextFieldState extends State<NeuTextField>
         cursorRadius ??= const Radius.circular(2.0);
         cursorOffset = Offset(
             iOSHorizontalOffset / MediaQuery.of(context).devicePixelRatio, 0);
-        autocorrectionTextRectColor = themeData.textSelectionColor;
+        autocorrectionTextRectColor = themeData.textSelectionTheme.selectionColor;
         break;
 
       case TargetPlatform.android:
@@ -1124,7 +1124,7 @@ class _NeuTextFieldState extends State<NeuTextField>
             widget.textSelectionControls ?? materialTextSelectionControls;
         paintCursorAboveText = false;
         cursorOpacityAnimates = false;
-        cursorColor ??= themeData.cursorColor;
+        cursorColor ??= themeData.textSelectionTheme.cursorColor;
         break;
     }
 
@@ -1154,7 +1154,7 @@ class _NeuTextFieldState extends State<NeuTextField>
         maxLines: widget.maxLines,
         minLines: widget.minLines,
         expands: widget.expands,
-        selectionColor: themeData.textSelectionColor,
+        selectionColor: themeData.textSelectionTheme.selectionColor,
         selectionControls:
             widget.selectionEnabled ? textSelectionControls : null,
         onChanged: widget.onChanged,
@@ -1167,7 +1167,7 @@ class _NeuTextFieldState extends State<NeuTextField>
         mouseCursor: MouseCursor.defer, // TextField will handle the cursor
         cursorWidth: widget.cursorWidth,
         cursorRadius: cursorRadius,
-        cursorColor: cursorColor,
+        cursorColor: cursorColor ?? Colors.blue,
         selectionHeightStyle: widget.selectionHeightStyle,
         selectionWidthStyle: widget.selectionWidthStyle,
         cursorOpacityAnimates: cursorOpacityAnimates,
