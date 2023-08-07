@@ -328,6 +328,7 @@ class NeuBasedCupertinoTheme extends CupertinoThemeData {
           _cupertinoOverrideTheme.textTheme,
           _cupertinoOverrideTheme.barBackgroundColor,
           _cupertinoOverrideTheme.scaffoldBackgroundColor,
+          false
         );
 
   final NeuThemeData _neuThemeData;
@@ -359,27 +360,25 @@ class NeuBasedCupertinoTheme extends CupertinoThemeData {
   /// Material [ThemeData]. To change the base Material [ThemeData], create a
   /// new Material [Theme] and use `copyWith` on the Material [ThemeData]
   /// instead.
-  @override
-  NeuBasedCupertinoTheme copyWith({
-    Brightness? brightness,
-    Color? primaryColor,
-    Color? primaryContrastingColor,
-    CupertinoTextThemeData? textTheme,
-    Color? barBackgroundColor,
-    Color? scaffoldBackgroundColor,
-  }) {
-    return NeuBasedCupertinoTheme._(
-      _neuThemeData,
-      _cupertinoOverrideTheme.copyWith(
-        brightness: brightness,
-        primaryColor: primaryColor,
-        primaryContrastingColor: primaryContrastingColor,
-        textTheme: textTheme,
-        barBackgroundColor: barBackgroundColor,
-        scaffoldBackgroundColor: scaffoldBackgroundColor,
-      ),
-    );
-  }
+  // @override
+  // NeuBasedCupertinoTheme copyWith({
+  //   Brightness? brightness,
+  //   Color? primaryColor,
+  //   Color? primaryContrastingColor,
+  //   CupertinoTextThemeData? textTheme,
+  //   Color? barBackgroundColor,
+  //   Color? scaffoldBackgroundColor,
+  // }) => NeuBasedCupertinoTheme._(
+  //     _neuThemeData,
+  //     _cupertinoOverrideTheme.copyWith(
+  //       brightness: brightness,
+  //       primaryColor: primaryColor,
+  //       primaryContrastingColor: primaryContrastingColor,
+  //       textTheme: textTheme,
+  //       barBackgroundColor: barBackgroundColor,
+  //       scaffoldBackgroundColor: scaffoldBackgroundColor,
+  //     ),
+  //   );
 
   @override
   CupertinoThemeData resolveFrom(BuildContext context) {

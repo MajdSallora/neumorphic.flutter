@@ -1132,13 +1132,11 @@ class NeuThemeData {
 
     return _localizedThemeDataCache.putIfAbsent(
       _IdentityThemeDataCacheKey(baseTheme, localTextGeometry),
-      () {
-        return baseTheme.copyWith(
+      () => baseTheme.copyWith(
           primaryTextTheme: localTextGeometry.merge(baseTheme.primaryTextTheme),
           accentTextTheme: localTextGeometry.merge(baseTheme.accentTextTheme),
           textTheme: localTextGeometry.merge(baseTheme.textTheme),
-        );
-      },
+        ),
     );
   }
 
@@ -1369,9 +1367,9 @@ class NeuThemeData {
           Color.lerp(a.primaryColorLight, b.primaryColorLight, t)!,
       primaryColorDark: Color.lerp(a.primaryColorDark, b.primaryColorDark, t)!,
       canvasColor: Color.lerp(a.canvasColor, b.canvasColor, t)!,
-      accentColor: Color.lerp(a.accentColor, b.accentColor, t)!,
+      accentColor: Color.lerp(a.accentColor, b.colorScheme.secondary, t)!,
       accentColorBrightness:
-          t < 0.5 ? a.accentColorBrightness : b.accentColorBrightness,
+          t < 0.5 ? a.accentColorBrightness : b.brightness,
       scaffoldBackgroundColor:
           Color.lerp(a.scaffoldBackgroundColor, b.scaffoldBackgroundColor, t)!,
       bottomAppBarColor:
@@ -1390,7 +1388,7 @@ class NeuThemeData {
       buttonTheme: t < 0.5 ? a.buttonTheme : b.buttonTheme,
       toggleButtonsTheme: ToggleButtonsThemeData.lerp(
           a.toggleButtonsTheme, b.toggleButtonsTheme, t)!,
-      buttonColor: Color.lerp(a.buttonColor, b.buttonColor, t),
+      buttonColor: Color.lerp(a.buttonColor, b.buttonTheme.colorScheme?.primary, t),
       secondaryHeaderColor:
           Color.lerp(a.secondaryHeaderColor, b.secondaryHeaderColor, t)!,
       textSelectionColor:
@@ -1409,14 +1407,14 @@ class NeuThemeData {
       textTheme: TextTheme.lerp(a.textTheme, b.textTheme, t),
       primaryTextTheme:
           TextTheme.lerp(a.primaryTextTheme, b.primaryTextTheme, t),
-      accentTextTheme: TextTheme.lerp(a.accentTextTheme, b.accentTextTheme, t),
+      accentTextTheme: TextTheme.lerp(a.accentTextTheme, b.textTheme, t),
       inputDecorationTheme:
           t < 0.5 ? a.inputDecorationTheme : b.inputDecorationTheme,
       iconTheme: IconThemeData.lerp(a.iconTheme, b.iconTheme, t),
       primaryIconTheme:
           IconThemeData.lerp(a.primaryIconTheme, b.primaryIconTheme, t),
       accentIconTheme:
-          IconThemeData.lerp(a.accentIconTheme, b.accentIconTheme, t),
+          IconThemeData.lerp(a.accentIconTheme, b.iconTheme, t),
       sliderTheme: SliderThemeData.lerp(a.sliderTheme, b.sliderTheme, t),
       tabBarTheme: TabBarTheme.lerp(a.tabBarTheme, b.tabBarTheme, t),
       tooltipTheme: TooltipThemeData.lerp(a.tooltipTheme, b.tooltipTheme, t)!,

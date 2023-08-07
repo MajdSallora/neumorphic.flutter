@@ -90,29 +90,29 @@ class _TextFieldSelectionGestureDetectorBuilder
       }
     }
   }
-
-  @override
-  void onSingleTapUp(TapUpDetails details) {
-    editableText.hideToolbar();
-    if (delegate.selectionEnabled) {
-      switch (Theme.of(_state.context).platform) {
-        case TargetPlatform.iOS:
-        case TargetPlatform.macOS:
-          renderEditable.selectWordEdge(cause: SelectionChangedCause.tap);
-          break;
-        case TargetPlatform.android:
-        case TargetPlatform.fuchsia:
-        case TargetPlatform.linux:
-        case TargetPlatform.windows:
-          renderEditable.selectPosition(cause: SelectionChangedCause.tap);
-          break;
-      }
-    }
-    _state._requestKeyboard();
-    if (_state.widget.onTap != null) {
-      _state.widget.onTap!();
-    }
-  }
+  //
+  // @override
+  // void onSingleTapUp(TapUpDetails details) {
+  //   editableText.hideToolbar();
+  //   if (delegate.selectionEnabled) {
+  //     switch (Theme.of(_state.context).platform) {
+  //       case TargetPlatform.iOS:
+  //       case TargetPlatform.macOS:
+  //         renderEditable.selectWordEdge(cause: SelectionChangedCause.tap);
+  //         break;
+  //       case TargetPlatform.android:
+  //       case TargetPlatform.fuchsia:
+  //       case TargetPlatform.linux:
+  //       case TargetPlatform.windows:
+  //         renderEditable.selectPosition(cause: SelectionChangedCause.tap);
+  //         break;
+  //     }
+  //   }
+  //   _state._requestKeyboard();
+  //   if (_state.widget.onTap != null) {
+  //     _state.widget.onTap!();
+  //   }
+  // }
 
   @override
   void onSingleLongTapStart(LongPressStartDetails details) {
